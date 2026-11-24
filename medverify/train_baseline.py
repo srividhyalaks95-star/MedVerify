@@ -152,6 +152,10 @@ def main() -> None:
         args.model, num_labels=NUM_LABELS,
         id2label={i: n for i, n in LABELS.items()},
         label2id={n: i for i, n in LABELS.items()})
+    # The checkpoint's own config has 2 labels, which triggers a harmless
+    # warning; confirm the head and label maps are the 3-class ones.
+    assert model.classifier.out_features == NUM_LABELS
+    assert model.config.id2label == {i: n for i, n in LABELS.items()}
 
     targs = TrainingArguments(
         output_dir=str(out_dir / "checkpoints"),
