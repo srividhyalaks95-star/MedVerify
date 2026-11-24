@@ -1,0 +1,44 @@
+{
+  "train": {
+    "rows": 1259,
+    "labels": {
+      "Inconclusive": 261,
+      "Evidence": 366,
+      "NEI": 632
+    },
+    "claim_unseen_rows": 0,
+    "pair_tokens_mean": 458.2398729150119,
+    "pair_tokens_p95": 718.2999999999997,
+    "pair_tokens_max": 1693,
+    "pct_over_max_length": 31.930103256552822,
+    "claim_tokens_max": 125
+  },
+  "validation": {
+    "rows": 316,
+    "labels": {
+      "Inconclusive": 67,
+      "Evidence": 83,
+      "NEI": 166
+    },
+    "claim_unseen_rows": 202,
+    "pair_tokens_mean": 460.94303797468353,
+    "pair_tokens_p95": 732.25,
+    "pair_tokens_max": 1398,
+    "pct_over_max_length": 31.962025316455694,
+    "claim_tokens_max": 151
+  },
+  "test": {
+    "rows": 394,
+    "labels": {
+      "Inconclusive": 54,
+      "Evidence": 113,
+      "NEI": 227
+    },
+    "claim_unseen_rows": 270,
+    "pair_tokens_mean": 448.0558375634518,
+    "pair_tokens_p95": 714.6999999999999,
+    "pair_tokens_max": 973,
+    "pct_over_max_length": 30.96446700507614,
+    "claim_tokens_max": 119
+  }
+}

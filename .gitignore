@@ -1,0 +1,6 @@
+.venv/
+external/
+__pycache__/
+*.pyc
+results/*/checkpoints/
+.DS_Store
