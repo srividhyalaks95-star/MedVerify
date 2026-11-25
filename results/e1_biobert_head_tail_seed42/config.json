@@ -1,0 +1,48 @@
+{
+  "run_name": "e1_biobert_head_tail_seed42",
+  "args": {
+    "policy": "head_tail",
+    "model": "dmis-lab/biobert-base-cased-v1.2",
+    "epochs": 5,
+    "lr": 2e-05,
+    "batch_size": 16,
+    "per_device_batch": 8,
+    "seed": 42,
+    "output_dir": null,
+    "smoke": false
+  },
+  "effective_batch_size": 16,
+  "label_mapping": {
+    "0": "Inconclusive",
+    "1": "Evidence",
+    "2": "NEI"
+  },
+  "class_weights": {
+    "Inconclusive": 1.607918263090677,
+    "Evidence": 1.1466302367941712,
+    "NEI": 0.6640295358649789
+  },
+  "excluded_columns": [
+    "label",
+    "pValues",
+    "statisticalMethods",
+    "nonInferiorityTypes"
+  ],
+  "max_length": 512,
+  "rows": {
+    "train": 1259,
+    "validation": 316,
+    "test": 394
+  },
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.22.1",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "accelerate": "1.15.0",
+    "datasets": "4.8.5"
+  },
+  "python": "3.13.16",
+  "device": "Tesla T4"
+}

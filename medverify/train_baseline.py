@@ -113,6 +113,8 @@ def main() -> None:
                     help="micro-batch; grad accumulation fills the rest")
     ap.add_argument("--seed", type=int, default=SEED)
     ap.add_argument("--output_dir", default=None)
+    ap.add_argument("--no_class_weights", action="store_true",
+                    help="plain cross-entropy (ablation of class weighting)")
     ap.add_argument("--smoke", action="store_true",
                     help="tiny subset, 1 epoch, for a quick sanity check")
     args = ap.parse_args()
@@ -123,8 +125,9 @@ def main() -> None:
     if args.smoke:
         args.epochs = 1
 
-    run_name = f"e1_biobert_{args.policy}_seed{args.seed}" + (
-        "_smoke" if args.smoke else "")
+    run_name = (f"e1_biobert_{args.policy}_seed{args.seed}"
+                + ("_noweights" if args.no_class_weights else "")
+                + ("_smoke" if args.smoke else ""))
     out_dir = RESULTS_DIR / run_name if args.output_dir is None else \
         __import__("pathlib").Path(args.output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -145,7 +148,10 @@ def main() -> None:
 
     # Class weights from TRAIN only: n / (k * count_c)
     counts = np.bincount(pairs["train"].label, minlength=NUM_LABELS)
-    weights = len(pairs["train"]) / (NUM_LABELS * np.maximum(counts, 1))
+    if args.no_class_weights:
+        weights = np.ones(NUM_LABELS)  # plain cross-entropy
+    else:
+        weights = len(pairs["train"]) / (NUM_LABELS * np.maximum(counts, 1))
     class_weights = torch.tensor(weights, dtype=torch.float)
 
     model = AutoModelForSequenceClassification.from_pretrained(

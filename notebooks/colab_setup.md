@@ -33,6 +33,20 @@ print(torch.cuda.get_device_name(0))
 !python -m medverify.train_baseline --policy head_tail
 ```
 
+```bash
+%%bash
+# 5b. Seeds 42-44, weighted and unweighted, both policies (12 runs).
+# Existing run folders are skipped, so this can be re-run after a disconnect.
+for s in 42 43 44; do
+  for p in head head_tail; do
+    [ -d results/e1_biobert_${p}_seed${s} ] || \
+      python -m medverify.train_baseline --policy $p --seed $s
+    [ -d results/e1_biobert_${p}_seed${s}_noweights ] || \
+      python -m medverify.train_baseline --policy $p --seed $s --no_class_weights
+  done
+done
+```
+
 ```python
 # 6. Save results (checkpoints not needed) before the runtime resets
 from google.colab import drive
