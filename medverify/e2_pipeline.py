@@ -134,15 +134,24 @@ def infer(runs: list[str], policy: str = "head_tail", batch: int = 32):
             print("wrote", out)
 
 
-def aggregate(df: pd.DataFrame) -> pd.DataFrame:
+RULES = ("top1", "top3_any_non_nei")  # first = primary E2 baseline
+
+
+def aggregate(df: pd.DataFrame, rule: str = "top1") -> pd.DataFrame:
+    """top1: prediction of the rank-1 abstract (primary E2).
+    top3_any_non_nei: experimental variant over the top-3 abstracts."""
     rows = []
     cols = [f"prob_{LABELS[i]}" for i in sorted(LABELS)]
     for claim, g in df.groupby("claim", sort=False):
+        g = g.sort_values("rank")
         p = g[cols].to_numpy()
-        arg = p.argmax(1)
-        conf = p.max(1)
-        non = [i for i in range(len(g)) if arg[i] != NEI]
-        pred = int(arg[max(non, key=lambda i: conf[i])]) if non else NEI
+        if rule == "top1":
+            pred = int(p[0].argmax())
+        else:
+            arg = p.argmax(1)
+            conf = p.max(1)
+            non = [i for i in range(len(g)) if arg[i] != NEI]
+            pred = int(arg[max(non, key=lambda i: conf[i])]) if non else NEI
         rows.append({"claim": claim, "pred": pred,
                      "gold": int(g["gold_claim_label"].iloc[0]),
                      "claim_unseen": bool(g["claim_unseen"].iloc[0])})
@@ -156,50 +165,61 @@ def evaluate():
     if not files:
         raise SystemExit("no scores files; run infer first")
     runs = [f.name[len("scores_"):-len("_validation.csv")] for f in files]
-    res = {"runs": runs, "per_run": {}, "baseline_always_nei": {}}
-    for run in runs:
-        res["per_run"][run] = {}
-        for s in SPLITS:
-            a = aggregate(pd.read_csv(E2_DIR / f"scores_{run}_{s}.csv"))
-            res["per_run"][run][s] = {
-                "all": classification_metrics(a["gold"], a["pred"]),
-                "unseen": classification_metrics(
-                    a[a.claim_unseen]["gold"], a[a.claim_unseen]["pred"])}
+    res = {"runs": runs, "rules": list(RULES), "primary": RULES[0],
+           "per_rule": {}, "baseline_always_nei": {}}
     for s in SPLITS:
         a = aggregate(pd.read_csv(E2_DIR / f"scores_{runs[0]}_{s}.csv"))
         res["baseline_always_nei"][s] = classification_metrics(
             a["gold"], [NEI] * len(a))
 
-    lines = ["| run | split | subset | n | macro F1 | acc |",
-             "|---|---|---|---|---|---|"]
-    summ = {}
-    for s in SPLITS:
-        for sub in ("all", "unseen"):
-            f1 = [res["per_run"][r][s][sub]["macro_f1"] for r in runs]
-            ac = [res["per_run"][r][s][sub]["accuracy"] for r in runs]
-            n = res["per_run"][runs[0]][s][sub]["n"]
-            for r in runs:
-                m = res["per_run"][r][s][sub]
-                lines.append(f"| {r} | {s} | {sub} | {n} | "
-                             f"{m['macro_f1']:.3f} | {m['accuracy']:.3f} |")
-            summ[f"{s}_{sub}"] = {
-                "macro_f1_mean": float(np.mean(f1)),
-                "macro_f1_sd": float(np.std(f1, ddof=1)) if len(f1) > 1 else 0,
-                "acc_mean": float(np.mean(ac))}
-    res["summary"] = summ
-    lines += ["", "Mean +- sd over runs (macro F1):"]
-    for k, v in summ.items():
-        lines.append(f"- {k}: {v['macro_f1_mean']:.3f} +- "
-                     f"{v['macro_f1_sd']:.3f} (acc {v['acc_mean']:.3f})")
-    lines += ["", "Always-NEI baseline:"]
+    lines = []
+    order = [LABELS[i] for i in sorted(LABELS)]
+    for rule in RULES:
+        per_run = {}
+        for run in runs:
+            per_run[run] = {}
+            for s in SPLITS:
+                a = aggregate(pd.read_csv(E2_DIR / f"scores_{run}_{s}.csv"),
+                              rule)
+                per_run[run][s] = {
+                    "all": classification_metrics(a["gold"], a["pred"]),
+                    "unseen": classification_metrics(
+                        a[a.claim_unseen]["gold"],
+                        a[a.claim_unseen]["pred"])}
+        summ = {}
+        tag = " (PRIMARY)" if rule == RULES[0] else " (experimental variant)"
+        lines += [f"## Rule: {rule}{tag}", "",
+                  "| run | split | subset | n | macro F1 | acc |",
+                  "|---|---|---|---|---|---|"]
+        for s in SPLITS:
+            for sub in ("all", "unseen"):
+                f1 = [per_run[r][s][sub]["macro_f1"] for r in runs]
+                ac = [per_run[r][s][sub]["accuracy"] for r in runs]
+                n = per_run[runs[0]][s][sub]["n"]
+                for r in runs:
+                    m = per_run[r][s][sub]
+                    lines.append(f"| {r} | {s} | {sub} | {n} | "
+                                 f"{m['macro_f1']:.3f} | "
+                                 f"{m['accuracy']:.3f} |")
+                summ[f"{s}_{sub}"] = {
+                    "macro_f1_mean": float(np.mean(f1)),
+                    "macro_f1_sd": (float(np.std(f1, ddof=1))
+                                    if len(f1) > 1 else 0),
+                    "acc_mean": float(np.mean(ac))}
+        lines += ["", "Mean +- sd over runs (macro F1):"]
+        for k, v in summ.items():
+            lines.append(f"- {k}: {v['macro_f1_mean']:.3f} +- "
+                         f"{v['macro_f1_sd']:.3f} (acc {v['acc_mean']:.3f})")
+        first = per_run[runs[0]]["test"]["all"]
+        lines += ["", f"Test confusion matrix ({runs[0]}; rows=true, "
+                  f"cols=pred, order {order}):",
+                  str(first["confusion_matrix"]), ""]
+        res["per_rule"][rule] = {"per_run": per_run, "summary": summ}
+    lines += ["Always-NEI baseline:"]
     for s in SPLITS:
         b = res["baseline_always_nei"][s]
         lines.append(f"- {s}: macro F1 {b['macro_f1']:.3f}, "
                      f"acc {b['accuracy']:.3f}")
-    first = res["per_run"][runs[0]]["test"]["all"]
-    lines += ["", f"Test confusion matrix ({runs[0]}; rows=true, cols=pred, "
-              f"order {[LABELS[i] for i in sorted(LABELS)]}):",
-              str(first["confusion_matrix"])]
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / "e2_results.json").write_text(json.dumps(res, indent=2))
     (OUT_DIR / "e2_results.md").write_text("\n".join(lines))

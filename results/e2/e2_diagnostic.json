@@ -1,0 +1,51 @@
+{
+  "run": "e1_biobert_head_tail_seed42",
+  "validation": {
+    "claims_with_gold_pmid": 149,
+    "gold_in_top3": 132,
+    "acc_when_gold_retrieved": 0.6136363636363636,
+    "gold_missed": 17,
+    "acc_when_gold_missed": 0.4117647058823529,
+    "nei_claims": 139,
+    "nei_claims_predicted_non_nei": 55,
+    "nei_abstract_votes_non_nei": 0.2158273381294964,
+    "variants": {
+      "top3_any_non_nei (variant)": {
+        "macro_f1": 0.583216662345519,
+        "accuracy": 0.5972222222222222
+      },
+      "mean_prob": {
+        "macro_f1": 0.544367653139583,
+        "accuracy": 0.6111111111111112
+      },
+      "top1_only (primary)": {
+        "macro_f1": 0.6508281609764395,
+        "accuracy": 0.6770833333333334
+      }
+    }
+  },
+  "test": {
+    "claims_with_gold_pmid": 165,
+    "gold_in_top3": 150,
+    "acc_when_gold_retrieved": 0.5666666666666667,
+    "gold_missed": 15,
+    "acc_when_gold_missed": 0.3333333333333333,
+    "nei_claims": 190,
+    "nei_claims_predicted_non_nei": 90,
+    "nei_abstract_votes_non_nei": 0.2894736842105263,
+    "variants": {
+      "top3_any_non_nei (variant)": {
+        "macro_f1": 0.5198298777246145,
+        "accuracy": 0.5352112676056338
+      },
+      "mean_prob": {
+        "macro_f1": 0.48057060795852946,
+        "accuracy": 0.5521126760563381
+      },
+      "top1_only (primary)": {
+        "macro_f1": 0.5538522023551964,
+        "accuracy": 0.6084507042253521
+      }
+    }
+  }
+}
