@@ -1,0 +1,199 @@
+{
+  "validation": {
+    "n": 316,
+    "accuracy": 0.7816455696202531,
+    "macro_f1": 0.7217061057551856,
+    "per_class": {
+      "Inconclusive": {
+        "precision": 0.559322033898305,
+        "recall": 0.4925373134328358,
+        "f1": 0.5238095238095238,
+        "support": 67
+      },
+      "Evidence": {
+        "precision": 0.6804123711340206,
+        "recall": 0.7951807228915663,
+        "f1": 0.7333333333333333,
+        "support": 83
+      },
+      "NEI": {
+        "precision": 0.925,
+        "recall": 0.891566265060241,
+        "f1": 0.9079754601226994,
+        "support": 166
+      }
+    },
+    "confusion_matrix": [
+      [
+        33,
+        27,
+        7
+      ],
+      [
+        12,
+        66,
+        5
+      ],
+      [
+        14,
+        4,
+        148
+      ]
+    ]
+  },
+  "test": {
+    "n": 394,
+    "accuracy": 0.6979695431472082,
+    "macro_f1": 0.6269188730648134,
+    "per_class": {
+      "Inconclusive": {
+        "precision": 0.3225806451612903,
+        "recall": 0.5555555555555556,
+        "f1": 0.40816326530612246,
+        "support": 54
+      },
+      "Evidence": {
+        "precision": 0.6486486486486487,
+        "recall": 0.6371681415929203,
+        "f1": 0.6428571428571429,
+        "support": 113
+      },
+      "NEI": {
+        "precision": 0.9105263157894737,
+        "recall": 0.762114537444934,
+        "f1": 0.829736211031175,
+        "support": 227
+      }
+    },
+    "confusion_matrix": [
+      [
+        30,
+        20,
+        4
+      ],
+      [
+        28,
+        72,
+        13
+      ],
+      [
+        35,
+        19,
+        173
+      ]
+    ]
+  },
+  "log_history": [
+    {
+      "loss": 1.7613059900983978,
+      "grad_norm": 31.262285232543945,
+      "learning_rate": 1.6050632911392404e-05,
+      "epoch": 1.0,
+      "step": 79
+    },
+    {
+      "eval_loss": 0.7591195702552795,
+      "eval_accuracy": 0.689873417721519,
+      "eval_macro_f1": 0.504104338387436,
+      "eval_f1_Inconclusive": 0.0,
+      "eval_f1_Evidence": 0.6290322580645161,
+      "eval_f1_NEI": 0.8832807570977917,
+      "eval_runtime": 2.5957,
+      "eval_samples_per_second": 121.739,
+      "eval_steps_per_second": 7.705,
+      "epoch": 1.0,
+      "step": 79
+    },
+    {
+      "loss": 1.4155644284018987,
+      "grad_norm": 28.936561584472656,
+      "learning_rate": 1.2050632911392407e-05,
+      "epoch": 2.0,
+      "step": 158
+    },
+    {
+      "eval_loss": 0.7399880290031433,
+      "eval_accuracy": 0.7088607594936709,
+      "eval_macro_f1": 0.5706368005622171,
+      "eval_f1_Inconclusive": 0.15730337078651685,
+      "eval_f1_Evidence": 0.6517857142857143,
+      "eval_f1_NEI": 0.9028213166144201,
+      "eval_runtime": 2.4554,
+      "eval_samples_per_second": 128.697,
+      "eval_steps_per_second": 8.145,
+      "epoch": 2.0,
+      "step": 158
+    },
+    {
+      "loss": 1.1921417622626582,
+      "grad_norm": 25.272422790527344,
+      "learning_rate": 8.050632911392406e-06,
+      "epoch": 3.0,
+      "step": 237
+    },
+    {
+      "eval_loss": 0.7025172710418701,
+      "eval_accuracy": 0.7626582278481012,
+      "eval_macro_f1": 0.6912476412476413,
+      "eval_f1_Inconclusive": 0.48333333333333334,
+      "eval_f1_Evidence": 0.6813186813186813,
+      "eval_f1_NEI": 0.9090909090909091,
+      "eval_runtime": 2.5934,
+      "eval_samples_per_second": 121.847,
+      "eval_steps_per_second": 7.712,
+      "epoch": 3.0,
+      "step": 237
+    },
+    {
+      "loss": 0.9561804276478442,
+      "grad_norm": 20.741044998168945,
+      "learning_rate": 4.050632911392405e-06,
+      "epoch": 4.0,
+      "step": 316
+    },
+    {
+      "eval_loss": 0.6922932863235474,
+      "eval_accuracy": 0.7563291139240507,
+      "eval_macro_f1": 0.6812392780352731,
+      "eval_f1_Inconclusive": 0.4369747899159664,
+      "eval_f1_Evidence": 0.7021276595744681,
+      "eval_f1_NEI": 0.9046153846153846,
+      "eval_runtime": 2.6041,
+      "eval_samples_per_second": 121.348,
+      "eval_steps_per_second": 7.68,
+      "epoch": 4.0,
+      "step": 316
+    },
+    {
+      "loss": 0.7649368575856655,
+      "grad_norm": 16.836620330810547,
+      "learning_rate": 5.063291139240507e-08,
+      "epoch": 5.0,
+      "step": 395
+    },
+    {
+      "eval_loss": 0.696520209312439,
+      "eval_accuracy": 0.7816455696202531,
+      "eval_macro_f1": 0.7217061057551856,
+      "eval_f1_Inconclusive": 0.5238095238095238,
+      "eval_f1_Evidence": 0.7333333333333333,
+      "eval_f1_NEI": 0.9079754601226994,
+      "eval_runtime": 2.6002,
+      "eval_samples_per_second": 121.529,
+      "eval_steps_per_second": 7.692,
+      "epoch": 5.0,
+      "step": 395
+    },
+    {
+      "train_runtime": 248.2715,
+      "train_samples_per_second": 25.355,
+      "train_steps_per_second": 1.591,
+      "total_flos": 1652964824257488.0,
+      "train_loss": 1.2180258931992929,
+      "epoch": 5.0,
+      "step": 395
+    }
+  ],
+  "best_checkpoint": "/content/MedVerify/results/e1_biobert_head_seed44/checkpoints/checkpoint-395",
+  "train_runtime_sec": 248.2715
+}

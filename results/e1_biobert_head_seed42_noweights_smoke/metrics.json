@@ -1,0 +1,119 @@
+{
+  "validation": {
+    "n": 64,
+    "accuracy": 0.578125,
+    "macro_f1": 0.4274647887323944,
+    "per_class": {
+      "Inconclusive": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 17
+      },
+      "Evidence": {
+        "precision": 0.4583333333333333,
+        "recall": 0.6875,
+        "f1": 0.55,
+        "support": 16
+      },
+      "NEI": {
+        "precision": 0.65,
+        "recall": 0.8387096774193549,
+        "f1": 0.7323943661971831,
+        "support": 31
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        8,
+        9
+      ],
+      [
+        0,
+        11,
+        5
+      ],
+      [
+        0,
+        5,
+        26
+      ]
+    ]
+  },
+  "test": {
+    "n": 64,
+    "accuracy": 0.71875,
+    "macro_f1": 0.4523809523809524,
+    "per_class": {
+      "Inconclusive": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 9
+      },
+      "Evidence": {
+        "precision": 0.5384615384615384,
+        "recall": 0.4666666666666667,
+        "f1": 0.5,
+        "support": 15
+      },
+      "NEI": {
+        "precision": 0.7647058823529411,
+        "recall": 0.975,
+        "f1": 0.8571428571428571,
+        "support": 40
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        5,
+        4
+      ],
+      [
+        0,
+        7,
+        8
+      ],
+      [
+        0,
+        1,
+        39
+      ]
+    ]
+  },
+  "log_history": [
+    {
+      "loss": 1.8408527374267578,
+      "grad_norm": 15.243298530578613,
+      "learning_rate": 5e-06,
+      "epoch": 1.0,
+      "step": 4
+    },
+    {
+      "eval_loss": 0.9338396787643433,
+      "eval_accuracy": 0.578125,
+      "eval_macro_f1": 0.4274647887323944,
+      "eval_f1_Inconclusive": 0.0,
+      "eval_f1_Evidence": 0.55,
+      "eval_f1_NEI": 0.7323943661971831,
+      "eval_runtime": 0.4959,
+      "eval_samples_per_second": 129.066,
+      "eval_steps_per_second": 8.067,
+      "epoch": 1.0,
+      "step": 4
+    },
+    {
+      "train_runtime": 17.5776,
+      "train_samples_per_second": 3.641,
+      "train_steps_per_second": 0.228,
+      "total_flos": 16839258734592.0,
+      "train_loss": 1.8408527374267578,
+      "epoch": 1.0,
+      "step": 4
+    }
+  ],
+  "best_checkpoint": "/content/MedVerify/results/e1_biobert_head_seed42_noweights_smoke/checkpoints/checkpoint-4",
+  "train_runtime_sec": 17.5776
+}

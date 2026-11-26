@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 results/*/checkpoints/
 .DS_Store
+data/corpus/
