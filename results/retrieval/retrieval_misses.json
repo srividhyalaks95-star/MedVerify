@@ -1,0 +1,79 @@
+[
+  {
+    "claim": "Treatment is superior or other to Placebo in terms of The Primary End Point Was the Percentage of Patients With a Negative Mycological Culture. 1 year",
+    "gold": [
+      "22453588"
+    ],
+    "top3": [
+      "22461276",
+      "20422704",
+      "21968664"
+    ]
+  },
+  {
+    "claim": "Treatment is superior to Control in terms of Depression Scores at Week 16 Absolute scores at Week 16",
+    "gold": [
+      "26301756"
+    ],
+    "top3": [
+      "27474961",
+      "21811192",
+      "22963932"
+    ]
+  },
+  {
+    "claim": "Juice Plus is superior or other to Placebo in terms of Number of Days With at Least Moderate (i.e. Moderate or Severe) Common Cold Symptoms. within 6 months (after 2 months run-in period)",
+    "gold": [
+      "18029492"
+    ],
+    "top3": [
+      "28552382",
+      "25770814",
+      "30158069"
+    ]
+  },
+  {
+    "claim": "SPD489 is superior or other to Placebo in terms of Percent of Treatment Failures at up to 6 Weeks Up to 6 weeks",
+    "gold": [
+      "22780921"
+    ],
+    "top3": [
+      "27537841",
+      "20346539",
+      "32022483"
+    ]
+  },
+  {
+    "claim": "THS 2.2 Use is superior to CC Use in terms of Post-bronchodilator Forced Expiratory Volume in 1 Second (FEV1). 26 Weeks",
+    "gold": [
+      "31270101"
+    ],
+    "top3": [
+      "24836205",
+      "24464974",
+      "32022483"
+    ]
+  },
+  {
+    "claim": "Telephone-based Peer Support is superior or other to Enhanced Usual Care in terms of Change in Functional Status-Mental Health (MCS) Over 12 Month Period Change over study period",
+    "gold": [
+      "24135507"
+    ],
+    "top3": [
+      "20956707",
+      "30630401",
+      "23471421"
+    ]
+  },
+  {
+    "claim": "GW-1000-02 is superior or other to Placebo in terms of Change From Baseline in Composite Primary Impairment Visual Analogue Scale Score at the End of 6 Weeks of Treatment baseline and 6 weeks",
+    "gold": [
+      "15327042"
+    ],
+    "top3": [
+      "34879448",
+      "22963932",
+      "22198448"
+    ]
+  }
+]
