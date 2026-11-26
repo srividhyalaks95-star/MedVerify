@@ -94,7 +94,10 @@ def infer(runs: list[str], policy: str = "head_tail", batch: int = 32):
     for run in runs:
         run = Path(run)
         ckpt = run
-        if not (run / "config.json").exists():
+        cfg = run / "config.json"
+        is_model = cfg.exists() and "model_type" in json.loads(
+            cfg.read_text())
+        if not is_model:
             best = None
             m = run / "metrics.json"
             if m.exists():
