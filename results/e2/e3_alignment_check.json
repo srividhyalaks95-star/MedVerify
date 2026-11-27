@@ -1,0 +1,24 @@
+{
+  "pairs": 447,
+  "gold_pairs": 132,
+  "unparsed": 0,
+  "features": {
+    "int_cov": {
+      "mean_gold": 0.8452564102564103,
+      "mean_nongold": 0.4117965367965368,
+      "auc": 0.796565934065934
+    },
+    "cmp_cov": {
+      "mean_gold": 0.9163153786104606,
+      "mean_nongold": 0.6780441588400066,
+      "auc": 0.6445062113562879
+    },
+    "out_cov": {
+      "mean_gold": 0.6269845898786162,
+      "mean_nongold": 0.44792268452601297,
+      "auc": 0.7127705627705627
+    }
+  },
+  "align_mean_auc": 0.8552068302068302,
+  "rank_auc_lower_rank_is_gold": 0.8977633477633478
+}

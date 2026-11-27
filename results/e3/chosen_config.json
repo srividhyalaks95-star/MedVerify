@@ -1,0 +1,15 @@
+{
+  "tau": 0.7,
+  "alpha": 2,
+  "fallback": "top1",
+  "split_to_inconclusive": false,
+  "val_macro_f1": 0.6567794651318679,
+  "val_macro_f1_e2_top1": 0.6508281609764395,
+  "grid_size": 72,
+  "ablation_split_on": {
+    "tau": 0.7,
+    "alpha": 2,
+    "fallback": "top1",
+    "val_macro_f1": 0.6385365691974467
+  }
+}
