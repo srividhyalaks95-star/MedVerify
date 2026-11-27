@@ -1,0 +1,49 @@
+{
+  "temperature": 1.55,
+  "lam": 0.5,
+  "per_lam": {
+    "0.0": {
+      "aurc": 0.16402700742266965,
+      "threshold": 0.5577408908889117,
+      "val_coverage": 0.65625,
+      "val_sel_acc": 0.7513227513227513,
+      "target_reached": true
+    },
+    "0.1": {
+      "aurc": 0.15489159058057853,
+      "threshold": 0.5115325707277952,
+      "val_coverage": 0.65625,
+      "val_sel_acc": 0.7513227513227513,
+      "target_reached": true
+    },
+    "0.2": {
+      "aurc": 0.1506426257141013,
+      "threshold": 0.4551490495319083,
+      "val_coverage": 0.6805555555555556,
+      "val_sel_acc": 0.75,
+      "target_reached": true
+    },
+    "0.3": {
+      "aurc": 0.14796839459375052,
+      "threshold": 0.37538797976410576,
+      "val_coverage": 0.75,
+      "val_sel_acc": 0.75,
+      "target_reached": true
+    },
+    "0.5": {
+      "aurc": 0.1452398616338464,
+      "threshold": 0.26086271589582727,
+      "val_coverage": 0.7569444444444444,
+      "val_sel_acc": 0.7522935779816514,
+      "target_reached": true
+    }
+  },
+  "target_sel_acc": 0.75,
+  "min_coverage": 0.3,
+  "val_n": 288,
+  "val_acc_full": 0.6805555555555556,
+  "val_ece_raw": 0.12249607202252961,
+  "val_ece_cal": 0.09182062373998016,
+  "val_nll_raw": 0.8683450411282796,
+  "val_nll_cal": 0.8225641972331262
+}
