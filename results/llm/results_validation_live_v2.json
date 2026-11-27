@@ -1,0 +1,224 @@
+{
+  "split": "validation",
+  "version": "v2",
+  "mode": "live",
+  "systems": {
+    "B0": {
+      "n": 288,
+      "accuracy": 0.4826388888888889,
+      "macro_f1": 0.21701795472287275,
+      "per_class": {
+        "Inconclusive": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 67
+        },
+        "Evidence": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 82
+        },
+        "NEI": {
+          "precision": 0.4826388888888889,
+          "recall": 1.0,
+          "f1": 0.6510538641686182,
+          "support": 139
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          67
+        ],
+        [
+          0,
+          0,
+          82
+        ],
+        [
+          0,
+          0,
+          139
+        ]
+      ],
+      "macro_f1_ci95": [
+        0.1994848970387514,
+        0.23423423423423426
+      ],
+      "unseen": {
+        "n": 198,
+        "accuracy": 0.2828282828282828,
+        "macro_f1": 0.14698162729658792,
+        "per_class": {
+          "Inconclusive": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 64
+          },
+          "Evidence": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 78
+          },
+          "NEI": {
+            "precision": 0.2828282828282828,
+            "recall": 1.0,
+            "f1": 0.4409448818897638,
+            "support": 56
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            64
+          ],
+          [
+            0,
+            0,
+            78
+          ],
+          [
+            0,
+            0,
+            56
+          ]
+        ]
+      }
+    },
+    "B0+correction": {
+      "n": 288,
+      "accuracy": 0.6979166666666666,
+      "macro_f1": 0.6855927002285634,
+      "per_class": {
+        "Inconclusive": {
+          "precision": 0.5945945945945946,
+          "recall": 0.6567164179104478,
+          "f1": 0.624113475177305,
+          "support": 67
+        },
+        "Evidence": {
+          "precision": 0.7236842105263158,
+          "recall": 0.6707317073170732,
+          "f1": 0.6962025316455697,
+          "support": 82
+        },
+        "NEI": {
+          "precision": 0.7391304347826086,
+          "recall": 0.7338129496402878,
+          "f1": 0.7364620938628159,
+          "support": 139
+        }
+      },
+      "confusion_matrix": [
+        [
+          44,
+          4,
+          19
+        ],
+        [
+          10,
+          55,
+          17
+        ],
+        [
+          20,
+          17,
+          102
+        ]
+      ],
+      "macro_f1_ci95": [
+        0.6270135160019378,
+        0.7371080178870356
+      ],
+      "unseen": {
+        "n": 198,
+        "accuracy": 0.6818181818181818,
+        "macro_f1": 0.6809370839491394,
+        "per_class": {
+          "Inconclusive": {
+            "precision": 0.7,
+            "recall": 0.65625,
+            "f1": 0.6774193548387096,
+            "support": 64
+          },
+          "Evidence": {
+            "precision": 0.8360655737704918,
+            "recall": 0.6538461538461539,
+            "f1": 0.7338129496402878,
+            "support": 78
+          },
+          "NEI": {
+            "precision": 0.5454545454545454,
+            "recall": 0.75,
+            "f1": 0.631578947368421,
+            "support": 56
+          }
+        },
+        "confusion_matrix": [
+          [
+            42,
+            4,
+            18
+          ],
+          [
+            10,
+            51,
+            17
+          ],
+          [
+            8,
+            6,
+            42
+          ]
+        ]
+      }
+    }
+  },
+  "diff_cor_minus_b0_macro_f1_ci95": [
+    0.40676850362559025,
+    0.5257913413846101
+  ],
+  "changes": {
+    "n_changed": 150,
+    "fixed": 99,
+    "broken": 37,
+    "wrong_to_wrong": 14
+  },
+  "overhead": {
+    "claims": 288,
+    "b0": {
+      "calls": 288,
+      "in_tok": 85763,
+      "out_tok": 16789,
+      "cost_usd": 0.0612
+    },
+    "correction": {
+      "calls": 288,
+      "in_tok": 507947,
+      "out_tok": 34094,
+      "cost_usd": 0.2577
+    },
+    "run_summary_this_session": {
+      "calls_total": 576,
+      "calls_real": 576,
+      "calls_cached": 0,
+      "in_tokens": 593710,
+      "out_tokens": 50883,
+      "latency_s": 856.61,
+      "cost_usd": 0.318897,
+      "mode": "live",
+      "model": "gpt-4.1-mini",
+      "price_per_1M_in_out": [
+        0.4,
+        1.6
+      ]
+    },
+    "note": "cost 0 for cached calls; per-claim latency is sum of per-call latency (wall time is lower with parallelism)"
+  }
+}

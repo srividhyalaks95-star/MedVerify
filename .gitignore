@@ -5,3 +5,5 @@ __pycache__/
 results/*/checkpoints/
 .DS_Store
 data/corpus/
+data/llm_cache/
+.env

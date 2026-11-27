@@ -1,0 +1,127 @@
+{
+  "rows": [
+    {
+      "claim": "Exemestane is superior to Anastrozole in terms of Event-free Survival 5 years",
+      "gold": "Inconclusive",
+      "b0": "NEI",
+      "b0_reason": "No specific clinical trial results or statistical evidence are provided to support the claim that Exemestane is superior to Anastrozole in terms of 5-year Event-free Survival.",
+      "corrected": "Inconclusive",
+      "changed": false,
+      "evidence_pmid": "23358971",
+      "cor_reason": "PMID 23358971 reports a randomized phase III trial comparing exemestane versus anastrozole for 5 years in postmenopausal breast cancer patients. The 4-year event-free survival was 91% for exemestane and 91.2% for anastrozole with a hazard ratio of 1.02 and P = .85, indicating no statistically significant difference. Therefore, the claim that exemestane is superior to anastrozole in terms of 5-year event-free survival is not supported by this evidence, making the result inconclusive.",
+      "b0_tok": [
+        276,
+        47
+      ],
+      "cor_tok": [
+        1957,
+        145
+      ]
+    },
+    {
+      "claim": "Antidepressant + SPD489 is superior or other to Antidepressant + Placebo in terms of Mean Change From Baseline",
+      "gold": "Inconclusive",
+      "b0": "NEI",
+      "b0_reason": "No specific clinical trial results or statistical data are provided to confirm or refute the claim that Antidepressant + SPD489 is superior to Antidepressant + Placebo in terms of mean change from baseline in MADRS total score at 8 weeks.",
+      "corrected": "NEI",
+      "changed": false,
+      "evidence_pmid": "",
+      "cor_reason": "None of the retrieved abstracts report results for the combination of Antidepressant + SPD489 versus Antidepressant + Placebo on the MADRS total score at 8 weeks. The abstracts discuss other drugs or combinations (vortioxetine, lisdexamfetamine, buprenorphine/samidorphan) and different study designs or durations. Therefore, there is not enough information to confirm or refute the claim.",
+      "b0_tok": [
+        301,
+        61
+      ],
+      "cor_tok": [
+        1798,
+        107
+      ]
+    },
+    {
+      "claim": "Palifermin is superior or other to Placebo in terms of Cumulative Incidence Rate of Oral Mucositis Within 6 bl",
+      "gold": "Evidence",
+      "b0": "NEI",
+      "b0_reason": "There is no information provided from a clinical trial results paper regarding the statistical significance of Palifermin compared to Placebo for the cumulative incidence rate of oral mucositis within 6 blinded cycles up to 18 weeks. Without access to trial outcome data, the claim cannot be verified.",
+      "corrected": "Evidence",
+      "changed": true,
+      "evidence_pmid": "20855800",
+      "cor_reason": "PMID 20855800 reports a randomized, double-blind, placebo-controlled trial of palifermin versus placebo given before each chemotherapy cycle (up to 6 cycles) in patients receiving multicycle chemotherapy. The study found that palifermin significantly reduced the cumulative incidence of moderate to severe mucositis (44% vs. 88%; P < 0.001) compared to placebo over a median of 6 blinded cycles, which matches the claim about cumulative incidence rate of oral mucositis within 6 blinded cycles. Therefore, the claim that palifermin is superior to placebo for this outcome is supported by this evidence.",
+      "b0_tok": [
+        295,
+        68
+      ],
+      "cor_tok": [
+        1949,
+        153
+      ]
+    },
+    {
+      "claim": "Asenapine is superior to Placebo in terms of Least Squares Mean Change From Baseline in Young-Mania Rating Sca",
+      "gold": "Evidence",
+      "b0": "NEI",
+      "b0_reason": "No specific clinical trial results or statistical data are provided to confirm or refute the claim that Asenapine is superior to Placebo in terms of Least Squares Mean Change From Baseline in Y-MRS Score at Day 21. Without access to trial results or published papers, there is not enough information to verify this claim.",
+      "corrected": "Evidence",
+      "changed": false,
+      "evidence_pmid": "22198448",
+      "cor_reason": "PMID 22198448 reports a 12-week randomized, placebo-controlled study where adjunctive asenapine significantly improved mania versus placebo at week 3 (primary endpoint) and weeks 2 to 12, with significant improvements in Young Mania Rating Scale (YMRS) total score at week 3. This matches the claim that asenapine is superior to placebo in terms of Least Squares Mean Change From Baseline in YMRS Score at Day 21 (week 3). Therefore, the claim is supported by evidence.",
+      "b0_tok": [
+        297,
+        77
+      ],
+      "cor_tok": [
+        1870,
+        133
+      ]
+    },
+    {
+      "claim": "Ultrasound is superior to Landmarks in terms of Number of Attempts Required. An expected average of 10 minutes",
+      "gold": "NEI",
+      "b0": "NEI",
+      "b0_reason": "The claim states that ultrasound is superior to landmarks regarding the number of attempts required, but no specific clinical trial results or statistical evidence are provided to verify this claim.",
+      "corrected": "Evidence",
+      "changed": true,
+      "evidence_pmid": "12031746",
+      "cor_reason": "PMID 12031746 reports a randomized prospective study comparing ultrasound to conventional methods for epidural catheter placement. It shows a statistically significant reduction in the number of puncture attempts with ultrasound (from 2.18 to 1.35, p < 0.013), directly supporting the claim that ultrasound is superior to landmarks in terms of number of attempts required.",
+      "b0_tok": [
+        282,
+        43
+      ],
+      "cor_tok": [
+        1655,
+        99
+      ]
+    },
+    {
+      "claim": "CKD Enhanced Clinical Decision Support (CKD-CDS Intervention) is superior to Usual Care in terms of Number of ",
+      "gold": "NEI",
+      "b0": "NEI",
+      "b0_reason": "No specific clinical trial results or statistical data are provided in the claim text to determine whether CKD-CDS Intervention is superior to Usual Care regarding the number of patients referred to nephrology over an 18-month period.",
+      "corrected": "NEI",
+      "changed": false,
+      "evidence_pmid": "",
+      "cor_reason": "None of the retrieved abstracts report results from a trial comparing CKD Enhanced Clinical Decision Support (CKD-CDS Intervention) versus Usual Care specifically for the outcome 'Number of Patients With Referral to Nephrology 18-month period post index.' The abstracts either focus on different interventions, populations, or outcomes. Therefore, there is not enough information to confirm or refute the claim.",
+      "b0_tok": [
+        293,
+        55
+      ],
+      "cor_tok": [
+        1639,
+        99
+      ]
+    }
+  ],
+  "usage": {
+    "calls_total": 12,
+    "calls_real": 12,
+    "calls_cached": 0,
+    "in_tokens": 12612,
+    "out_tokens": 1087,
+    "latency_s": 20.48,
+    "cost_usd": 0.006784,
+    "mode": "live",
+    "model": "gpt-4.1-mini",
+    "price_per_1M_in_out": [
+      0.4,
+      1.6
+    ]
+  }
+}

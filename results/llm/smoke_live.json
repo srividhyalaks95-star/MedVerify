@@ -1,0 +1,127 @@
+{
+  "rows": [
+    {
+      "claim": "Exemestane is superior to Anastrozole in terms of Event-free Survival 5 years",
+      "gold": "Inconclusive",
+      "b0": "NEI",
+      "b0_reason": "The claim states that Exemestane is superior to Anastrozole in terms of Event-free Survival at 5 years, but no specific trial results or data are provided to support or refute this comparison.",
+      "corrected": "Evidence",
+      "changed": true,
+      "evidence_pmid": "23358971",
+      "cor_reason": "The trial in PMID 23358971 directly compares exemestane and anastrozole for 5 years and reports that 4-year event-free survival was similar (91% vs 91.2%) with no superiority of exemestane. Therefore, the claim that exemestane is superior to anastrozole in terms of 5-year event-free survival is not supported; the evidence shows no superiority.",
+      "b0_tok": [
+        162,
+        54
+      ],
+      "cor_tok": [
+        1804,
+        109
+      ]
+    },
+    {
+      "claim": "Antidepressant + SPD489 is superior or other to Antidepressant + Placebo in terms of Mean Change From Baseline",
+      "gold": "Inconclusive",
+      "b0": "NEI",
+      "b0_reason": "The claim states a comparison of Antidepressant + SPD489 versus Antidepressant + Placebo on the mean change from baseline in MADRS total score at 8 weeks, but no specific trial results or data are provided to confirm or refute this claim.",
+      "corrected": "NEI",
+      "changed": false,
+      "evidence_pmid": "",
+      "cor_reason": "None of the provided abstracts report on the combination of Antidepressant + SPD489 versus Antidepressant + Placebo in terms of Mean Change From Baseline in MADRS Total Score at 8 weeks. The abstracts discuss other drugs and combinations but do not provide evidence relevant to the claim.",
+      "b0_tok": [
+        187,
+        63
+      ],
+      "cor_tok": [
+        1645,
+        80
+      ]
+    },
+    {
+      "claim": "Palifermin is superior or other to Placebo in terms of Cumulative Incidence Rate of Oral Mucositis Within 6 bl",
+      "gold": "Evidence",
+      "b0": "NEI",
+      "b0_reason": "The claim mentions the comparison of Palifermin versus Placebo regarding the cumulative incidence rate of oral mucositis within 6 blinded cycles (up to 18 weeks), but no specific trial results or data are provided to confirm or refute this claim.",
+      "corrected": "Evidence",
+      "changed": true,
+      "evidence_pmid": "20855800",
+      "cor_reason": "The trial reported in PMID 20855800 shows that palifermin reduced the cumulative incidence of moderate to severe oral mucositis compared to placebo over up to 6 blinded cycles (3-week cycles), supporting the claim that palifermin is superior to placebo in terms of cumulative incidence rate of oral mucositis within 18 weeks.",
+      "b0_tok": [
+        181,
+        62
+      ],
+      "cor_tok": [
+        1796,
+        93
+      ]
+    },
+    {
+      "claim": "Asenapine is superior to Placebo in terms of Least Squares Mean Change From Baseline in Young-Mania Rating Sca",
+      "gold": "Evidence",
+      "b0": "NEI",
+      "b0_reason": "The claim states that Asenapine is superior to Placebo in terms of Least Squares Mean Change From Baseline in Y-MRS Score at Day 21, but no specific trial results or data are provided to confirm or refute this comparison.",
+      "corrected": "Evidence",
+      "changed": true,
+      "evidence_pmid": "22198448",
+      "cor_reason": "The study with PMID 22198448 reports a 12-week randomized, placebo-controlled trial where adjunctive asenapine significantly improved mania versus placebo at week 3 (day 21), with the primary efficacy endpoint being change from baseline Young Mania Rating Scale (YMRS) total score at week 3. This directly supports the claim that asenapine is superior to placebo in terms of least squares mean change from baseline in YMRS score at day 21.",
+      "b0_tok": [
+        183,
+        61
+      ],
+      "cor_tok": [
+        1717,
+        120
+      ]
+    },
+    {
+      "claim": "Ultrasound is superior to Landmarks in terms of Number of Attempts Required. An expected average of 10 minutes",
+      "gold": "NEI",
+      "b0": "NEI",
+      "b0_reason": "The claim states that ultrasound is superior to landmarks regarding the number of attempts required, but no specific data or results are provided to confirm this comparison or the timing mentioned.",
+      "corrected": "Evidence",
+      "changed": true,
+      "evidence_pmid": "12031746,23106885",
+      "cor_reason": "The abstracts from PMID 12031746 and 23106885 provide evidence that ultrasound guidance significantly reduces the number of puncture attempts compared to landmark (palpation) techniques. Specifically, PMID 12031746 reports a reduction in puncture attempts from 2.18 to 1.35 with ultrasound (p < 0.013), and PMID 23106885 reports fewer puncture attempts in the ultrasound group (P = 0.035). Although the claim mentions an expected average of 10 minutes after the technique, the abstracts report procedure durations but do not contradict the claim about number of attempts. Therefore, the draft verdict of NEI should be changed to Evidence.",
+      "b0_tok": [
+        168,
+        44
+      ],
+      "cor_tok": [
+        1502,
+        167
+      ]
+    },
+    {
+      "claim": "CKD Enhanced Clinical Decision Support (CKD-CDS Intervention) is superior to Usual Care in terms of Number of ",
+      "gold": "NEI",
+      "b0": "NEI",
+      "b0_reason": "The claim states a comparison between CKD-CDS Intervention and Usual Care regarding the number of patients referred to nephrology over an 18-month period post index, but no specific data or results are provided to confirm or refute this claim.",
+      "corrected": "NEI",
+      "changed": false,
+      "evidence_pmid": "",
+      "cor_reason": "None of the provided abstracts report on the outcome of number of patients with referral to nephrology within an 18-month period comparing CKD Enhanced Clinical Decision Support (CKD-CDS Intervention) to Usual Care. Therefore, there is not enough information to assess the claim.",
+      "b0_tok": [
+        179,
+        60
+      ],
+      "cor_tok": [
+        1486,
+        77
+      ]
+    }
+  ],
+  "usage": {
+    "calls_total": 12,
+    "calls_real": 12,
+    "calls_cached": 0,
+    "in_tokens": 11010,
+    "out_tokens": 990,
+    "latency_s": 20.38,
+    "cost_usd": 0.005988,
+    "mode": "live",
+    "model": "gpt-4.1-mini",
+    "price_per_1M_in_out": [
+      0.4,
+      1.6
+    ]
+  }
+}

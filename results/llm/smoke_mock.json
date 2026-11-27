@@ -1,0 +1,73 @@
+{
+  "rows": [
+    {
+      "claim": "Exemestane is superior to Anastrozole in terms of Event-free Survival 5 years",
+      "gold": "Inconclusive",
+      "b0": "Inconclusive",
+      "b0_reason": "[mock output]",
+      "corrected": "Inconclusive",
+      "changed": false,
+      "evidence_pmid": "[mock output]",
+      "cor_reason": "[mock output]",
+      "b0_tok": [
+        135,
+        13
+      ],
+      "cor_tok": [
+        1723,
+        28
+      ]
+    },
+    {
+      "claim": "Palifermin is superior or other to Placebo in terms of Cumulative Incidence Rate of Oral Mucositis Within 6 bl",
+      "gold": "Evidence",
+      "b0": "Inconclusive",
+      "b0_reason": "[mock output]",
+      "corrected": "Inconclusive",
+      "changed": false,
+      "evidence_pmid": "[mock output]",
+      "cor_reason": "[mock output]",
+      "b0_tok": [
+        155,
+        13
+      ],
+      "cor_tok": [
+        1826,
+        28
+      ]
+    },
+    {
+      "claim": "Ultrasound is superior to Landmarks in terms of Number of Attempts Required. An expected average of 10 minutes",
+      "gold": "NEI",
+      "b0": "NEI",
+      "b0_reason": "[mock output]",
+      "corrected": "NEI",
+      "changed": true,
+      "evidence_pmid": "[mock output]",
+      "cor_reason": "[mock output]",
+      "b0_tok": [
+        149,
+        11
+      ],
+      "cor_tok": [
+        1632,
+        25
+      ]
+    }
+  ],
+  "usage": {
+    "calls_total": 6,
+    "calls_real": 6,
+    "calls_cached": 0,
+    "in_tokens": 5620,
+    "out_tokens": 118,
+    "latency_s": 0.0,
+    "cost_usd": 0.002437,
+    "mode": "mock",
+    "model": "gpt-4.1-mini",
+    "price_per_1M_in_out": [
+      0.4,
+      1.6
+    ]
+  }
+}
